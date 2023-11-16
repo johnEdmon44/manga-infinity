@@ -7,7 +7,7 @@ export const MangaList = () => {
 
   return (
     <>
-      <h1>Hello</h1>
+      <h1 className="text-3xl font-bold underline">Hello</h1>
     </>
   )
 }
