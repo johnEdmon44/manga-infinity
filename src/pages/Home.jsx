@@ -4,9 +4,9 @@ import { Navbar } from "../components/Navbar"
 
 export const Home = () => {
   return (
-    <>
+    <section>
       <Navbar />
-      <MangaList />
-    </>
+      <MangaList genre="Action" order="popularity" limit={5}/>
+    </section>
   )
 }

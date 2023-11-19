@@ -1,14 +1,13 @@
 import { useEffect, useState } from "react"
-import { fetchMangaList } from "../services/mangaList";
+import { fetchManga } from "../services/getManga";
 
-export const useFetchMangaList = (genre, limit) => {
+export const useFetchMangaList = (genre, order, limit) => {
   const [mangaList, setMangaList] = useState(null);
-  const [page, setPage] = useState(1);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const data = await fetchMangaList(`/api/top/manga?page=${page}&genre=${genre}&limit=${limit}`)
+        const data = await fetchManga(`/api/manga?genre=${genre}&order_by=${order}&limit=${limit}`)
         setMangaList(data)
       } catch (error) {
         console.log(error)
@@ -16,7 +15,7 @@ export const useFetchMangaList = (genre, limit) => {
     }
 
     fetchData();
-  }, [genre, limit, page]);
+  }, [genre, order, limit]);
 
   return mangaList;
 }
