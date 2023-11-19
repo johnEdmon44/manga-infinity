@@ -13,7 +13,7 @@ export const MangaList = ({ genre, order, limit }) => {
     <section className="bg-white mx-auto w-3/4 mt-10 rounded-lg">
       <h1 className="uppercase font-black  text-center p-7 text-2xl ">top {genre} manga</h1>
 
-      <div className="flex justify-center gap-8 p-5">
+      <div className="grid grid-cols-5 gap-8 p-5">
         {mangaList.data.map(manga => (
           <div key={manga.mal_id} className=" relative group">
             <img className="h-80 w-80 object-cover border border-gray-300 group-hover:opacity-30 transition-all" src={manga.images.webp.image_url}></img>
