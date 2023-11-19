@@ -1,8 +1,8 @@
 import { useFetchMangaList } from "../hooks/useFetchMangaList"
 import { PropTypes } from "prop-types"
 
-export const MangaList = ({ genre, order, limit }) => {
-  const mangaList = useFetchMangaList(genre, order, limit);
+export const MangaList = ({ genreId, order, limit, mangaListType="", sort }) => {
+  const mangaList = useFetchMangaList(genreId, order, limit, sort);
 
   if(!mangaList) {
     return <h1>Loading...</h1>
@@ -11,7 +11,7 @@ export const MangaList = ({ genre, order, limit }) => {
 
   return (
     <section className="bg-white mx-auto w-3/4 mt-10 rounded-lg">
-      <h1 className="uppercase font-black  text-center p-7 text-2xl ">top {genre} manga</h1>
+      <h1 className="uppercase font-black  text-center p-7 text-2xl ">{mangaListType} manga</h1>
 
       <div className="grid grid-cols-5 gap-8 p-5">
         {mangaList.data.map(manga => (
@@ -36,7 +36,9 @@ export const MangaList = ({ genre, order, limit }) => {
 
 
 MangaList.propTypes = {
-  genre: PropTypes.string.isRequired,
+  genreId: PropTypes.number,
   order: PropTypes.string.isRequired,
   limit: PropTypes.number.isRequired,
+  mangaListType: PropTypes.string,
+  sort: PropTypes.string,
 }
