@@ -10,7 +10,6 @@ export const MangaComponent = () => {
   }
 
   const manga = getManga.data;
-  console.log(manga)
 
   return (
     <section className="bg-white mx-auto w-2/4 mt-10 ">

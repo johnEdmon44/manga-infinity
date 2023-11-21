@@ -4,6 +4,7 @@ import App from './App.jsx'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { Manga } from './pages/Manga.jsx'
+import { Browse } from './pages/Browse.jsx'
 
 const router = createBrowserRouter([
   {
@@ -13,6 +14,10 @@ const router = createBrowserRouter([
   {
     path: '/manga/:mangaId',
     element: <Manga />
+  },
+  {
+    path: '/browse/:genreId',
+    element: <Browse />
   }
 ])
 
