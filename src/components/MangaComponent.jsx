@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom"
 import { useFetchManga } from "../hooks/useFetchManga";
+import { Link } from "react-router-dom";
 
 export const MangaComponent = () => {
   const { mangaId } = useParams();
@@ -19,9 +20,9 @@ export const MangaComponent = () => {
           <h1 className="ml-3 mt-1 font-bold text-2xl">{manga.title}</h1>
           <div>
             {manga.genres.map(genre => (
-              <p className="bg-black ml-3 mt-1 p-1 bg-opacity-50 text-white inline-flex cursor-pointer transition-all hover:bg-opacity-100 rounded-2xl text-xs" id={genre.mal_id} key={genre.mal_id}>
+              <Link to={`/browse/${genre.mal_id}`} className="bg-black ml-3 mt-1 p-1 bg-opacity-50 text-white inline-flex cursor-pointer transition-all hover:bg-opacity-100 rounded-2xl text-xs" id={genre.mal_id} key={genre.mal_id}>
                 {genre.name} 
-              </p>
+              </Link>
             ))}
           </div>
           <div className="flex">
