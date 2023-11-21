@@ -10,7 +10,7 @@ export const Browse = () => {
   return (
     <section>
       <Navbar />
-      <MangaList genre={genreId} order="popularity" limit={20} sort="asc"  />
+      <MangaList key={genreId} genreId={genreId} order="popularity" limit={20} sort="asc"  />
     </section>
   )
 }
