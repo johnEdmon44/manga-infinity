@@ -12,7 +12,7 @@ export const MangaList = ({ genreId, order, limit, mangaListType="", sort }) => 
 
   return (
     <section className="bg-white mx-auto w-3/4 mt-10 rounded-lg">
-      <h1 className="uppercase font-black  text-center p-7 text-2xl ">{mangaListType} manga</h1>
+      <h1 className="uppercase font-black  text-center p-7 text-2xl ">{mangaListType==="" ? "results" : `${mangaListType} manga`}</h1>
 
       <div className="grid grid-cols-5 gap-8 p-5">
         {mangaList.data.map(manga => (
