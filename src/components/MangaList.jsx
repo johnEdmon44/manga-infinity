@@ -1,5 +1,6 @@
 import { useFetchMangaList } from "../hooks/useFetchMangaList"
 import { PropTypes } from "prop-types"
+import { Link } from 'react-router-dom'
 
 export const MangaList = ({ genreId, order, limit, mangaListType="", sort }) => {
   const mangaList = useFetchMangaList(genreId, order, limit, sort);
@@ -24,9 +25,9 @@ export const MangaList = ({ genreId, order, limit, mangaListType="", sort }) => 
                 </p>
               ))}
             </div>
-            <h1 className="bg-black bg-opacity-70 absolute w-full bottom-0 text-center text-white cursor-pointer hover:bg-opacity-100">
+            <Link to={`/manga/${manga.mal_id}`} id={manga.mal_id} className="bg-black bg-opacity-70 absolute w-full bottom-0 text-center text-white cursor-pointer hover:bg-opacity-100">
               {manga.title}
-            </h1>
+            </Link>
           </div>
         ))}
       </div>
