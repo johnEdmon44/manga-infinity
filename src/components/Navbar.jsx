@@ -9,7 +9,7 @@ export const Navbar = () => {
 
       <ul className="bg-red-500 mb-10 text-white font-bold flex gap-10 p-5">
         <Link to={'/'}>Home</Link>
-        <Link to={'/'}>Browse</Link>
+        <Link to={'/browse/1'}>Browse</Link>
         <Link to={'/'}>Bookmark</Link>
       </ul>
     </nav>
