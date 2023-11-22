@@ -4,13 +4,13 @@ import { MangaList } from "../components/MangaList"
 
 export const Browse = () => {
   const { genreId } = useParams()
-  console.log(genreId)
+  const genreIdNumber = Number(genreId)
 
 
   return (
     <section>
       <Navbar />
-      <MangaList key={genreId} genreId={genreId} order="popularity" limit={20} sort="asc"  />
+      <MangaList key={genreIdNumber} genreId={genreIdNumber} order="popularity" limit={20} sort="asc"  />
     </section>
   )
 }
