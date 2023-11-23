@@ -5,6 +5,8 @@ import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { Manga } from './pages/Manga.jsx'
 import { Browse } from './pages/Browse.jsx'
+import { Provider } from 'react-redux'
+import bookmarkStore from './store/bookmarkStore.js'
 
 const router = createBrowserRouter([
   {
@@ -24,6 +26,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Provider store={bookmarkStore}>
+      <RouterProvider router={router} />
+    </Provider>
   </React.StrictMode>,
 )

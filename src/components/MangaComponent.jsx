@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom"
 import { useFetchManga } from "../hooks/useFetchManga";
 import { Link } from "react-router-dom";
+import { Button } from "./Button";
 
 export const MangaComponent = () => {
   const { mangaId } = useParams();
@@ -32,6 +33,8 @@ export const MangaComponent = () => {
           </div>
 
           <p className="ml-3 mt-3 text-sm">{manga.synopsis}</p>
+          
+          <Button manga={manga} />
         </div>
       </div>
     </section>
