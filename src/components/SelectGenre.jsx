@@ -1,7 +1,7 @@
 import { useFetchGenre } from "../hooks/useFetchGenre"
 import { PropTypes } from "prop-types"
 
-export const SelectComponent = ({ onSelectChange } ) => {
+export const SelectGenre = ({ onSelectChange } ) => {
   const genres = useFetchGenre();
   
   if (!genres) {
@@ -21,7 +21,7 @@ export const SelectComponent = ({ onSelectChange } ) => {
   )
 }
 
-SelectComponent.propTypes = {
+SelectGenre.propTypes = {
   onSelectChange: PropTypes.func.isRequired
 }
 
