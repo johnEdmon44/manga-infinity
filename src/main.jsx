@@ -7,6 +7,7 @@ import { Manga } from './pages/Manga.jsx'
 import { Browse } from './pages/Browse.jsx'
 import { Provider } from 'react-redux'
 import bookmarkStore from './store/bookmarkStore.js'
+import { Bookmark } from './pages/Bookmark.jsx'
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
   {
     path: '/browse/:genreId',
     element: <Browse />
+  },
+  {
+    path: '/bookmark',
+    element: <Bookmark />
   }
 ])
 
