@@ -2,8 +2,8 @@ import { useFetchMangaList } from "../hooks/useFetchMangaList"
 import { PropTypes } from "prop-types"
 import { Link } from 'react-router-dom'
 
-export const MangaList = ({ genreId, order, limit, mangaListType="", sort }) => {
-  const mangaList = useFetchMangaList(genreId, order, limit, sort);
+export const MangaList = ({ genreId, order, limit, mangaListType="", sort, page }) => {
+  const mangaList = useFetchMangaList(genreId, order, limit, sort, page);
 
   if(!mangaList) {
     return <h1>Loading...</h1>
@@ -42,4 +42,5 @@ MangaList.propTypes = {
   limit: PropTypes.number.isRequired,
   mangaListType: PropTypes.string,
   sort: PropTypes.string,
+  page: PropTypes.number
 }

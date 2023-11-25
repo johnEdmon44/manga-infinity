@@ -5,6 +5,7 @@ import { useState } from "react"
 import { SelectGenre } from "../components/SelectGenre"
 import { Sort } from "../components/Sort"
 import { OrderBy } from "../components/orderBy"
+import { Pagination } from "../components/Pagination"
 
 
 export const Browse = () => {
@@ -13,6 +14,7 @@ export const Browse = () => {
   const [selectedGenreId, setSelectedGenreId] = useState(genreIdNumber);
   const [selectedSort, setSelectedSort] = useState("asc");
   const [selectedOrder, setSelectedOrder] = useState("popularity");
+  const [page, setPage] = useState(1)
 
   return (
     <section>
@@ -22,7 +24,8 @@ export const Browse = () => {
         <OrderBy onSelectChange={setSelectedOrder} />
         <Sort onSelectChange={setSelectedSort} />
       </div>
-      <MangaList key={selectedGenreId} genreId={selectedGenreId} order={selectedOrder} limit={25} sort={selectedSort}  />
+      <MangaList key={selectedGenreId} genreId={selectedGenreId} order={selectedOrder} limit={25} sort={selectedSort} page={page}  />
+      <Pagination page={page} setPage={setPage} />
     </section>
   )
 }
