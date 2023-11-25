@@ -6,8 +6,8 @@ export const Home = () => {
   return (
     <section>
       <Navbar />
-      <MangaList genreId={1} order="popularity" limit={5} mangaListType="top" sort="asc" />
-      <MangaList order="mal_id" limit={20} mangaListType="newest" sort="desc" />
+      <MangaList genreId={1} order="popularity" limit={5} mangaListType="top" sort="asc" isPageTrue={false} />
+      <MangaList order="mal_id" limit={20} mangaListType="newest" sort="desc" isPageTrue={false} />
     </section>
   )
 }

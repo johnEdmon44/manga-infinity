@@ -1,6 +1,6 @@
 import { PropTypes } from "prop-types";
 
-export const Pagination = ({ page, setPage }) => {
+export const Pagination = ({ page, setPage, totalPage }) => {
   const handlePrev = () => {
     setPage(page - 1);
   }
@@ -12,7 +12,7 @@ export const Pagination = ({ page, setPage }) => {
     <div>
       {page > 1 && <button onClick={handlePrev}>prev</button>}
       <p>{page}</p>
-      <button onClick={handleNext}>next</button>
+      {page < totalPage && <button onClick={handleNext}>next</button> }
     </div>
   )
 }
@@ -21,4 +21,5 @@ export const Pagination = ({ page, setPage }) => {
 Pagination.propTypes = {
   page: PropTypes.number,
   setPage: PropTypes.func,
+  totalPage: PropTypes.number,
 }

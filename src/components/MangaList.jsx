@@ -1,13 +1,19 @@
 import { useFetchMangaList } from "../hooks/useFetchMangaList"
 import { PropTypes } from "prop-types"
+import { useState } from "react"
 import { Link } from 'react-router-dom'
+import { Pagination } from "./Pagination"
 
-export const MangaList = ({ genreId, order, limit, mangaListType="", sort, page }) => {
+export const MangaList = ({ genreId, order, limit, mangaListType="", sort, isPageTrue }) => {
+  const pagination = isPageTrue;
+  const [page, setPage] = useState(1);
   const mangaList = useFetchMangaList(genreId, order, limit, sort, page);
 
   if(!mangaList) {
     return <h1>Loading...</h1>
   }
+
+  const totalPage = mangaList.pagination.last_visible_page;
 
 
   return (
@@ -31,6 +37,8 @@ export const MangaList = ({ genreId, order, limit, mangaListType="", sort, page 
           </div>
         ))}
       </div>
+
+      {pagination && <Pagination page={page} setPage={setPage} totalPage={totalPage} />}
     </section>
   )
 }
@@ -42,5 +50,6 @@ MangaList.propTypes = {
   limit: PropTypes.number.isRequired,
   mangaListType: PropTypes.string,
   sort: PropTypes.string,
-  page: PropTypes.number
+  isPageTrue: PropTypes.bool,
+  page: PropTypes.number,
 }
