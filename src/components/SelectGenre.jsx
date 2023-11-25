@@ -9,7 +9,7 @@ export const SelectGenre = ({ onSelectChange } ) => {
   }
 
   const handleChange = (event) => {
-    onSelectChange(event.target.value)
+    onSelectChange(Number(event.target.value))
   }
 
   return (
