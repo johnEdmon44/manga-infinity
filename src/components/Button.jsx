@@ -17,7 +17,7 @@ export const Button = ({ manga }) => {
   };
 
   return (
-    <button onClick={handleClick}>
+    <button className={`${isAlreadyadded ? 'bg-red-600': "bg-green-600"} text-white font-bold ml-3 mt-1 p-1 rounded-md`} onClick={handleClick}>
       {isAlreadyadded ? 'Remove from bookmark': "Add to bookmark"}
     </button>
   );
