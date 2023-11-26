@@ -1,21 +1,26 @@
+import { useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { Pagination } from "./Pagination";
 
 export const BookmarkList = () => {
   const mangaList = useSelector(state => state.bookmark);
+  const [page, setPage] = useState(1);
+  const itemsPerPage = 25;
   
   if(mangaList.length === 0) {
     return <>Empty</>
   }
 
-  console.log(mangaList.map(title => title.title))
+  const totalPage = Math.ceil(mangaList.length / itemsPerPage);
+  const currentPageItems = mangaList.slice((page - 1) * itemsPerPage, page * itemsPerPage);
 
   return (
     <section className="bg-white mx-auto w-3/4 mt-10 rounded-lg">
       <h1 className="uppercase font-black  text-center p-7 text-2xl ">Bookmarks</h1>
 
       <div className="grid grid-cols-5 gap-8 p-5">
-        {mangaList.map(manga => (
+        {currentPageItems.map(manga => (
           <div key={manga.mal_id} className=" relative group">
             <img className="h-80 w-80 object-cover border border-gray-300 group-hover:opacity-30 transition-all" src={manga.images.webp.image_url}></img>
             <div className="absolute top-0  mt-5 w-full invisible text-center group-hover:visible">
@@ -31,6 +36,8 @@ export const BookmarkList = () => {
           </div>
         ))}
       </div>
+
+      <Pagination page={page} setPage={setPage} totalPage={totalPage} />
     </section>
   )
 }
