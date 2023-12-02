@@ -19,7 +19,7 @@ const router = createBrowserRouter([
     element: <Manga />
   },
   {
-    path: '/browse/:genreId',
+    path: '/browse/:query?',
     element: <Browse />
   },
   {
