@@ -19,9 +19,9 @@ export const SearchBar = ({ setSearchList }) => {
   }
 
   return (
-    <div>
+    <div className="absolute mt-5 mr-10 right-0">
       <input
-        className="border border-gray-300 rounded-lg p-1 mr-5"
+        className="border border-gray-300 rounded-lg p-1 mr-5 w-70"
         type="text"
         placeholder="Search..."
         value={searchQuery}
