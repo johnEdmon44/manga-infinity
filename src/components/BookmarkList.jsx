@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
 import { Pagination } from "./Pagination";
+import { RenderList } from "./RenderList";
+
 
 export const BookmarkList = () => {
   const mangaList = useSelector(state => state.bookmark);
@@ -14,42 +15,13 @@ export const BookmarkList = () => {
 
   const totalPage = Math.ceil(mangaList.length / itemsPerPage);
   const currentPageItems = mangaList.slice((page - 1) * itemsPerPage, page * itemsPerPage);
+  
 
   return (
     <section className="bg-white mx-auto w-3/4 mt-10 rounded-lg">
       <h1 className="uppercase font-black  text-center p-7 text-2xl ">Bookmarks</h1>
 
-      <div className="grid grid-cols-2 md:grid-cols-5 gap-8 p-5">
-        {currentPageItems.data.map(manga => (
-          <div key={manga.mal_id} className=" relative group">
-            <img 
-              className="h-80 w-80 object-cover border border-gray-300 group-hover:opacity-30 transition-all" 
-              src={manga.images.webp.image_url}
-              alt={manga.title}
-            />
-            <div className="absolute top-0  mt-5 w-full invisible text-center group-hover:visible">
-              {manga.genres.map(genre => (
-                <Link 
-                  to={`/browse/${genre.mal_id}`} 
-                  id={genre.mal_id} 
-                  className="bg-black m-2 p-1 bg-opacity-50 text-white inline-flex cursor-pointer transition-all hover:bg-opacity-100 rounded-md" 
-                  key={genre.mal_id}
-                >
-                  {genre.name}
-                </Link>
-              ))}
-            </div>
-            <Link 
-              to={`/manga/${manga.mal_id}`} 
-              id={manga.mal_id} 
-              className="bg-black bg-opacity-70 absolute w-full bottom-0 text-center text-white cursor-pointer hover:bg-opacity-100"
-            >
-              {manga.title}
-            </Link>
-          </div>
-        ))}
-      </div>
-
+      <RenderList list={currentPageItems} />
       <Pagination page={page} setPage={setPage} totalPage={totalPage} />
     </section>
   )
