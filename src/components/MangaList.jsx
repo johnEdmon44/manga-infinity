@@ -18,7 +18,7 @@ export const MangaList = ({ genreId, order, limit, mangaListType="", sort, isPag
   
 
   return (
-    <section className="bg-white mx-auto w-11/12 md:w-3/4 mt-52 mb-20 rounded-lg z-10">
+    <section className="bg-white mx-auto w-11/12 md:w-3/4 mb-20 rounded-lg z-10">
       <h1 className="uppercase font-black  text-center p-7 text-2xl ">{mangaListType==="" ? "results" : `${mangaListType} manga`}</h1>
 
       <RenderList list={mangaList} />

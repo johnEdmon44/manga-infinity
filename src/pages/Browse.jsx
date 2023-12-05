@@ -24,23 +24,24 @@ export const Browse = () => {
     }
   }, [searchList, query]);
 
+  console.log(searchList)
 
   return (
-    <section>
+    <section className="mt-52">
       <Navbar setSearchList={setSearchList} />
 
       {!searchList ? (
-        <>
-          <div className="bg-white mx-auto w-3/4 mt-10 rounded-lg flex justify-center gap-5">
+        <div>
+          <div className="bg-white mx-auto w-3/4 rounded-lg flex justify-center gap-5 mb-10">
             <SelectGenre onSelectChange={setSelectedGenreId} />
             <OrderBy onSelectChange={setSelectedOrder} />
             <Sort onSelectChange={setSelectedSort} />
           </div>
           <MangaList key={selectedGenreId} genreId={selectedGenreId} order={selectedOrder} limit={25} sort={selectedSort} isPageTrue={true} />
-        </>
+        </div>
         
       ): (
-        <SearchList key={searchQuery} query={query}/>
+       <SearchList key={searchQuery} query={query}/>
       )}
     </section>
   )
