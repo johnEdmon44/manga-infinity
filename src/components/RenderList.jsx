@@ -40,5 +40,5 @@ export const RenderList = ({ list }) => {
 
 
 RenderList.propTypes = {
-  list: PropTypes.obj
+  list: PropTypes.object
 }
