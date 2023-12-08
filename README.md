@@ -1,8 +1,15 @@
-# React + Vite
+# Manga Infinity
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
+Manga Infinity is a web application built with React. It uses the Jikan API to fetch and display manga information. The application is designed to provide users with a comprehensive platform to browse, search, and bookmark their favorite manga.
 
-Currently, two official plugins are available:
+## Features
+1. **Browse Manga**: Users can browse through a list of manga. The list can be sorted and filtered based on different criteria such as genre, popularity, and recency.
+2. **Search Manga**: Users can search for specific manga using the search bar.
+3. **Manga Details**: Clicking on a manga will display detailed information about it, including its synopsis, author(s), and genre(s).
+4. **Bookmark Manga**: Users can bookmark their favorite manga for easy access later. The bookmarked manga are stored in a Redux store.
+5. **Responsive Design**: The application is designed to be responsive and works well on both desktop and mobile devices.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Screenshots
+![Preview desktop](./public/preview-desktop.png)
+![Preview mobile](./public/preview-mobile.png)
