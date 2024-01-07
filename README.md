@@ -12,7 +12,7 @@ Manga Infinity is a web application built with React. It uses the Jikan API to f
 
 ## Screenshots
 <p align="center">
-  <img src="./public/preview-desktop.png" alt="Preview desktop" width="300" />
+  <img src="./public/preview-desktop.png" alt="Preview desktop" />
 </p>
 
 <p align="center">
