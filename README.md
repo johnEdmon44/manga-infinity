@@ -11,5 +11,17 @@ Manga Infinity is a web application built with React. It uses the Jikan API to f
 5. **Responsive Design**: The application is designed to be responsive and works well on both desktop and mobile devices.
 
 ## Screenshots
-![Preview desktop](./public/preview-desktop.png=300x)
-![Preview mobile](./public/preview-mobile.png=300x)
+<p align="center">
+  <img src="./public/preview-desktop.png" alt="Preview desktop" width="300" />
+</p>
+
+<p align="center">
+  <img src="./public/preview-mobile.png" alt="Preview mobile" width="300" />
+</p>
+
+
+
+## How to run
+
+1. clone it
+2. npm run dev
