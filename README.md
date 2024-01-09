@@ -23,5 +23,6 @@ Manga Infinity is a web application built with React. It uses the Jikan API to f
 
 ## How to run
 
-1. clone it
-2. npm run dev
+1. git clone git@github.com:johnEdmon44/manga-infinity.git
+2. npm install
+3. npm run dev
