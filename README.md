@@ -20,7 +20,7 @@ Manga Infinity is a web application built with React. It uses the Jikan API to f
 
 ## Demo
 
-You can see a live demo of the Manga browser application [here](https://659e910de7092fde26f240a3--precious-cranachan-eb0b22.netlify.app/shop)
+You can see a live demo of the Manga browser application [here](https://glittery-dasik-7ebf2d.netlify.app/)
 
 ## Screenshots
 
