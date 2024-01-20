@@ -29,6 +29,10 @@ You can see a live demo of the Manga browser application [here](https://glittery
 </p>
 
 <p align="center">
+  <img src="./public/preview-desktop(1).png" alt="Preview desktop 1" />
+</p>
+
+<p align="center">
   <img src="./public/preview-mobile.png" alt="Preview mobile" width="300" />
 </p>
 
