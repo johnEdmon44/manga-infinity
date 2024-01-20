@@ -10,7 +10,7 @@ export const BookmarkList = () => {
   const itemsPerPage = 25;
   
   if(mangaList.length === 0) {
-    return <>Empty</>
+    return <h1 className="mt-96">Empty</h1>
   }
 
   const totalPage = Math.ceil(mangaList.length / itemsPerPage);
@@ -18,10 +18,10 @@ export const BookmarkList = () => {
   
 
   return (
-    <section className="bg-white mx-auto w-3/4 mt-10 rounded-lg">
+    <section className="bg-white mx-auto w-3/4 mt-40 rounded-lg">
       <h1 className="uppercase font-black  text-center p-7 text-2xl ">Bookmarks</h1>
 
-      <RenderList list={currentPageItems} />
+      <RenderList list={{ data: currentPageItems }} />
       <Pagination page={page} setPage={setPage} totalPage={totalPage} />
     </section>
   )
