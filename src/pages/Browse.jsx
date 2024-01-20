@@ -32,7 +32,7 @@ export const Browse = () => {
 
       {!searchList ? (
         <div>
-          <div className="bg-white mx-auto w-3/4 rounded-lg flex justify-center gap-5 mb-10">
+          <div className="mx-auto w-3/4 rounded-lg flex justify-center gap-5 mb-10">
             <SelectGenre onSelectChange={setSelectedGenreId} />
             <OrderBy onSelectChange={setSelectedOrder} />
             <Sort onSelectChange={setSelectedSort} />

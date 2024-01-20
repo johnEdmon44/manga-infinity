@@ -7,7 +7,7 @@ export const Sort = ({ onSelectChange }) => {
 
 
   return (
-    <select className="w-20" name="sort" id="sort" onChange={handleChange}>
+    <select className="w-32 bg-white p-2 rounded-lg" name="sort" id="sort" onChange={handleChange}>
       <option value="asc">asc</option>
       <option value="desc">desc</option>
     </select>
