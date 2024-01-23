@@ -38,7 +38,7 @@ export const MangaComponent = () => {
 
           <p className="ml-3 mt-3 text-xs text-gray-500">{manga.published.string}</p>
 
-          <p className="ml-3 mt-3 text-sm">{manga.synopsis}</p>
+          <p className="ml-3 mt-3 text-xs">{manga.synopsis}</p>
 
           <p className="ml-3 mt-3 text-sm">
             <FontAwesomeIcon icon={faEye} className="mr-1" />
