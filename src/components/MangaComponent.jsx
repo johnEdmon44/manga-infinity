@@ -16,7 +16,7 @@ export const MangaComponent = () => {
   const manga = getManga.data;
 
   return (
-    <section className="bg-white mt-40 mx-auto w-9/12 lg:w-2/4 ">
+    <section className="bg-white mt-52 mx-auto w-9/12 lg:w-2/4 ">
       <div className="flex flex-col md:flex-row p-5">
         <img className="" src={manga.images.webp.image_url} alt={manga.title}></img>
         <div>
