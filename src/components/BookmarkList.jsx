@@ -18,7 +18,7 @@ export const BookmarkList = () => {
   
 
   return (
-    <section className="bg-white mx-auto w-3/4 mt-40 rounded-lg">
+    <section className="bg-white mx-auto w-3/4 mt-52 rounded-lg">
       <h1 className="uppercase font-black  text-center p-7 text-2xl ">Bookmarks</h1>
 
       <RenderList list={{ data: currentPageItems }} />
