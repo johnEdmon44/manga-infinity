@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react"
-import { fetchManga } from "../services/getManga";
 
 export const useFetchGenre = () => {
   const [genres, setGenres] = useState(null);
@@ -7,8 +6,10 @@ export const useFetchGenre = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const data = await fetchManga('/api/genres/manga');
-        setGenres(data);
+        const response = await fetch('https://api.jikan.moe/v4/genres/manga');
+        const data = await response.json();
+        setGenres(data)
+        console.log(data)
       } catch (error) {
         console.log(error)
       }

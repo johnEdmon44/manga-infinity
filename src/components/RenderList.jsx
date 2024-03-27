@@ -4,9 +4,14 @@ import { PropTypes } from "prop-types"
 
 export const RenderList = ({ list }) => {
 
+  if (!list.data || list.data.length === 0) {
+    return <>Loading...</>;
+   }
+
+
   return (
     <div className="grid grid-cols-2 md:grid-cols-5 gap-8 p-5">
-      {list.data.map(manga => (
+      {list && list.data.map(manga => (
         <div key={manga.mal_id} className=" relative group">
           <img 
             className="h-80 w-80 object-cover border border-gray-300 group-hover:opacity-30 transition-all" 

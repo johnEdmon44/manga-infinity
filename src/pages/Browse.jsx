@@ -37,7 +37,7 @@ export const Browse = () => {
             <OrderBy onSelectChange={setSelectedOrder} />
             <Sort onSelectChange={setSelectedSort} />
           </div>
-          <MangaList key={selectedGenreId} genreId={selectedGenreId} order={selectedOrder} limit={25} sort={selectedSort} isPageTrue={true} />
+          <MangaList key={selectedGenreId} genreId={selectedGenreId} order={selectedOrder} limit={15} sort={selectedSort} isPageTrue={true} />
         </div>
         
       ): (

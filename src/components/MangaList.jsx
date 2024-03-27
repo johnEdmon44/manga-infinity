@@ -14,7 +14,7 @@ export const MangaList = ({ genreId, order, limit, mangaListType="", sort, isPag
     return <h1>Loading...</h1>
   }
 
-  const totalPage = mangaList.pagination.last_visible_page;
+  const totalPage = mangaList && mangaList.pagination ? mangaList.pagination.last_visible_page : 1;
   
 
   return (

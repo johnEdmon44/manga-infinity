@@ -21,7 +21,7 @@ export const SearchList = ({ query }) => {
       <h1 className="uppercase font-black  text-center p-7 text-2xl ">Results</h1>
 
       <div className="grid grid-cols-2 md:grid-cols-5 gap-8 p-5">
-        {searchList.data.map(manga => (
+        {searchList && searchList.data.map(manga => (
           <div key={manga.mal_id} className=" relative group">
             <img 
               className="h-80 w-80 object-cover border border-gray-300 group-hover:opacity-30 transition-all" 

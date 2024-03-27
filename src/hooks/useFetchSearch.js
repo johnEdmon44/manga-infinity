@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react"
-import { fetchManga } from "../services/getManga";
 
 export const useFetchSearch = (query) => {
   const [searchList, setSearchList] = useState(null);
@@ -7,8 +6,9 @@ export const useFetchSearch = (query) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const data = await fetchManga(`/api/manga?q=${query}`);
-        setSearchList(data);
+        const response = await fetch(`https://api.jikan.moe/v4/manga?q=${query}`);
+        const data = await response.json();
+        setSearchList(data)
       } catch (error) {
         console.log(error);
       }

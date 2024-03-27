@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react"
-import { fetchManga } from "../services/getManga"
 
 export const useFetchManga = ( mangaId ) => {
   const [manga, setManga] = useState(null);
@@ -7,8 +6,9 @@ export const useFetchManga = ( mangaId ) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const data = await fetchManga(`/api/manga/${mangaId}/full`);
-        setManga(data);
+        const response = await fetch(`https://api.jikan.moe/v4/manga/${mangaId}/full`);
+        const data = await response.json()
+        setManga(data)
       } catch (error) {
         console.log(error)
       }

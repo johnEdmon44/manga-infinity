@@ -14,7 +14,7 @@ export const SelectGenre = ({ onSelectChange } ) => {
 
   return (
     <select className="w-32 bg-white p-2 rounded-lg" id="selectGenres" name="selectGenres" onChange={handleChange}>
-      {genres.data.map(genre => (
+      {genres && genres.data.map(genre => (
         <option key={genre.mal_id} value={genre.mal_id}>{genre.name}</option>
       ))}
     </select>
