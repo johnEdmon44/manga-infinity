@@ -22,6 +22,7 @@ export const Navbar = ({ setSearchList }) => {
           <Link className='border-b border-black p-6 md:p-4 md:border-none' to={'/'}>Home</Link>
           <Link className='border-b border-black p-6 md:p-4 md:border-none' to={'/browse/1'}>Browse</Link>
           <Link className='border-b border-black p-6 md:p-4 md:border-none' to={'/bookmark'}>Bookmark</Link>
+          <Link className='border-b border-black p-6 md:p-4 md:border-none' to={'/author'}>author</Link>
         </ul>
       </div>
 

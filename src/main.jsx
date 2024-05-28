@@ -8,6 +8,7 @@ import { Browse } from './pages/Browse.jsx'
 import { Provider } from 'react-redux'
 import bookmarkStore from './store/bookmarkStore.js'
 import { Bookmark } from './pages/Bookmark.jsx'
+import { Author } from './pages/Author.jsx'
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
   {
     path: '/bookmark',
     element: <Bookmark />
+  },
+  {
+    path: '/author/:authorId',
+    element: <Author />
   }
 ])
 

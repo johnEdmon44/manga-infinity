@@ -32,7 +32,7 @@ export const MangaComponent = () => {
 
           <div className="flex">
             {manga.authors.map((author, index) => (
-              <p className="ml-3 mt-1 text-sm font-bold" id={author.mal_id} key={author.mal_id}>{author.name}{index < manga.authors.length - 1 && <span> |</span>}</p>
+              <Link to={`/author/${author.mal_id}`} className="ml-3 mt-1 text-sm font-bold hover:underline underline-offset-1" id={author.mal_id} key={author.mal_id}>{author.name}{index < manga.authors.length - 1 && <span> |</span>}</Link>
             ))}
           </div>
 
