@@ -10,7 +10,7 @@ export default defineConfig({
         target: 'https://api.jikan.moe/v4',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ''),
-      }
+      },
     }
   }
 })

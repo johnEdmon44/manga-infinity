@@ -8,6 +8,9 @@ import { Browse } from './pages/Browse.jsx'
 import { Provider } from 'react-redux'
 import bookmarkStore from './store/bookmarkStore.js'
 import { Bookmark } from './pages/Bookmark.jsx'
+import { Login } from './pages/Login.jsx'
+import AuthProvider from './components/AuthProvider.jsx'
+import { Signup } from './pages/Signup.jsx'
 
 const router = createBrowserRouter([
   {
@@ -25,6 +28,14 @@ const router = createBrowserRouter([
   {
     path: '/bookmark',
     element: <Bookmark />
+  },
+  {
+    path: '/login',
+    element: <Login />
+  },
+  {
+    path: 'signup',
+    element: <Signup />
   }
 ])
 
@@ -32,7 +43,9 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Provider store={bookmarkStore}>
-      <RouterProvider router={router} />
+      <AuthProvider>
+        <RouterProvider router={router} />
+      </AuthProvider>
     </Provider>
   </React.StrictMode>,
 )
