@@ -3,26 +3,25 @@ import { AuthContext } from "./AuthContext";
 import PropTypes from "prop-types";
 import { fetchUser } from "./fetchUser";
 
-
 function AuthProvider({ children }) {
-  const [user, setUser] = useState(() => {
-    const savedUser = localStorage.getItem("user");
-    return savedUser ? JSON.parse(savedUser) : null;
-  });
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
 
+  // Sync user session from backend on first load
   useEffect(() => {
-    const getUser = async () => {
-      if (!user) { // only fetch from backend if user isn't already in localStorage
-        const currentUser = await fetchUser();
-        if (currentUser) {
-          setUser(currentUser);
-          localStorage.setItem("user", JSON.stringify(currentUser));
-        }
+    const syncUser = async () => {
+      const backendUser = await fetchUser();
+      if (backendUser) {
+        setUser(backendUser);
+        localStorage.setItem("user", JSON.stringify(backendUser));
+      } else {
+        setUser(null);
+        localStorage.removeItem("user");
       }
+      setLoading(false);
     };
-    getUser();
-  }, [user]);  
-
+    syncUser();
+  }, []);
 
   const handleLogout = async () => {
     try {
@@ -30,18 +29,17 @@ function AuthProvider({ children }) {
         method: "POST",
         credentials: "include",
       });
-
       if (res.ok) {
         setUser(null);
         localStorage.removeItem("user");
-      } else {
-        console.error("Logout failed");
       }
     } catch (error) {
       console.error("Logout error:", error);
     }
   };
 
+  // Show nothing until backend session is confirmed
+  if (loading) return null;
 
   return (
     <AuthContext.Provider value={{ user, setUser, handleLogout }}>
@@ -50,8 +48,6 @@ function AuthProvider({ children }) {
   );
 }
 
-AuthProvider.propTypes = {
-  children: PropTypes.node.isRequired,
-};
+AuthProvider.propTypes = { children: PropTypes.node.isRequired };
 
 export default AuthProvider;

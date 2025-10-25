@@ -1,7 +1,7 @@
 const pool = require('./db');
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
-const bycrypt = require('bcrypt');
+const bcrypt = require('bcrypt');
 
 
 
@@ -13,7 +13,7 @@ passport.use(
 
       if(!user) return done(null, false, { message: 'User not found' });
 
-      const isMatch = await bycrypt.compare(password, user.password);
+      const isMatch = await bcrypt.compare(password, user.password);
 
       if(!isMatch) return done(null, false, { message: 'Password not match' });
 

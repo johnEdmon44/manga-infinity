@@ -75,4 +75,16 @@ async function userLogoutPost(req, res) {
   }
 }
 
-module.exports = { userLoginPost, userSignupPost, userLogoutPost };
+async function userGet(req, res) {
+  try {
+    if (req.user) {
+      res.status(200).json({ user: req.user });
+    } else {
+      res.status(200).json({ user: null });
+    }
+  } catch (error) {
+    res.status(500).json({ error: "Failed to fetch user" });
+  }
+}
+
+module.exports = { userLoginPost, userSignupPost, userLogoutPost, userGet };

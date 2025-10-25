@@ -39,9 +39,15 @@ export const Navbar = ({ setSearchList }) => {
               ${isActive ? "text-yellow-300 font-bold" : "hover:text-yellow-200"}`}>
                 Browse
             </NavLink>
-            <NavLink to="/bookmark" className={({isActive}) => `border-b border-black p-6 md:p-4 md:border-none 
-              ${isActive ? "text-yellow-300 font-bold" : "hover:text-yellow-200"}`}>
-                Bookmark
+            <NavLink
+              to={user ? "/bookmark" : "/login"}
+              className={({ isActive }) =>
+                `border-b border-black p-6 md:p-4 md:border-none ${
+                  isActive ? "text-yellow-300 font-bold" : "hover:text-yellow-200"
+                }`
+              }
+            >
+              Bookmark
             </NavLink>
           </div>
 

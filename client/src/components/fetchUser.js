@@ -1,6 +1,6 @@
 export async function fetchUser() {
   try {
-    const res = await fetch("/user", {
+    const res = await fetch(`${import.meta.env.VITE_API_URL}/user`, {
       method: "GET",
       credentials: "include",
     });
