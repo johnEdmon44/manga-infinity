@@ -1,4 +1,4 @@
-const pool = require("./db");
+const pool = require("../config/db");
 
 async function addBookmark(userId, mangaId, mangaTitle, coverImage) {
   await pool.query(

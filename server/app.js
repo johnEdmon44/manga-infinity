@@ -3,10 +3,10 @@ const express = require("express");
 const cors = require('cors');
 const session = require("express-session");
 const passport = require("passport");
-const userRouter = require('./userRouter');
-const bookmarkRouter = require("./bookmarkRouter");
+const userRouter = require('./user/userRouter');
+const bookmarkRouter = require("./bookmark/bookmarkRouter");
 const app = express();
-require('./passport');
+require('./config/passport');
 
 app.use(cors({
   origin: "http://localhost:5173",
