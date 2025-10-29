@@ -4,7 +4,7 @@ import { MangaList } from "../components/MangaList"
 import { useEffect, useState } from "react"
 import { SelectGenre } from "../components/SelectGenre"
 import { Sort } from "../components/Sort"
-import { OrderBy } from "../components/orderBy"
+import { OrderBy } from "../components/OrderBy"
 import { SearchList } from "../components/SearchList"
 
 
