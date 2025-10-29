@@ -9,7 +9,7 @@ const app = express();
 require('./config/passport');
 
 app.use(cors({
-  origin: "http://localhost:5173",
+  origin: process.env.URL,
   credentials: true  
 }));
 
