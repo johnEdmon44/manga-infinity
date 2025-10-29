@@ -7,7 +7,7 @@ export const RenderList = ({ list }) => {
   return (
     <div className="grid grid-cols-2 md:grid-cols-5 gap-8 p-5">
       {list.data.map((manga) => (
-        <div key={manga.manga_id || manga.id} className="relative group">
+        <div key={manga.manga_id || manga.mal_id} className="relative group">
           <img
             className="h-80 w-80 object-cover border border-gray-300 group-hover:opacity-30 transition-all"
             src={manga.cover_image || manga.images?.webp?.image_url}
@@ -18,16 +18,16 @@ export const RenderList = ({ list }) => {
               <Link
                 to={`/browse/${genre.mal_id}`}
                 id={genre.mal_id}
-                className="bg-black m-2 p-1 bg-opacity-50 text-white inline-flex cursor-pointer transition-all hover:bg-opacity-100 rounded-md"
                 key={genre.mal_id}
+                className="bg-black m-2 p-1 bg-opacity-50 text-white inline-flex cursor-pointer transition-all hover:bg-opacity-100 rounded-md"
               >
                 {genre.name}
               </Link>
             ))}
           </div>
           <Link
-            to={`/manga/${manga.manga_id || manga.id}`}
-            id={manga.manga_id || manga.id}
+            to={`/manga/${manga.manga_id || manga.mal_id}`}
+            id={manga.manga_id || manga.mal_id}
             className="bg-black bg-opacity-70 absolute w-full bottom-0 text-center text-white cursor-pointer hover:bg-opacity-100"
           >
             {manga.manga_title || manga.title}
