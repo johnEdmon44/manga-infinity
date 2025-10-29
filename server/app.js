@@ -7,6 +7,7 @@ const userRouter = require('./user/userRouter');
 const bookmarkRouter = require("./bookmark/bookmarkRouter");
 const app = express();
 require('./config/passport');
+const { createProxyMiddleware } = require('http-proxy-middleware');
 
 app.use(cors({
   origin: process.env.URL,
@@ -29,6 +30,14 @@ app.use(
     },
   })
 );
+
+app.use('/api', createProxyMiddleware({
+  target: 'https://api.jikan.moe/v4',
+  changeOrigin: true,
+  pathRewrite: {
+    '^/api': '',
+  },
+}))
 
 app.use(passport.initialize());
 app.use(passport.session());
