@@ -9,6 +9,7 @@ const jikanProxy = createProxyMiddleware({
   changeOrigin: true,
 });
 
+app.use('/api', jikanProxy);
 
 app.get('/', (req, res) => res.send('express'));
 const PORT = 3000;
