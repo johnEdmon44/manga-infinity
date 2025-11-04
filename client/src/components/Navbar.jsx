@@ -33,7 +33,6 @@ export const Navbar = ({ setSearchList }) => {
             <NavLink className='border-b border-black p-6 md:p-4 md:border-none' to={'/'}>Home</NavLink>
             <NavLink className='border-b border-black p-6 md:p-4 md:border-none' to={'/browse/1'}>Browse</NavLink>
             <NavLink className='border-b border-black p-6 md:p-4 md:border-none' to={'/bookmark'}>Bookmark</NavLink>
-            <NavLink className='border-b border-black p-6 md:p-4 md:border-none' to={'/author'}>Author</NavLink>
           </div>
 
           <div className='flex flex-col md:flex-row md:gap-10 h-screen md:h-auto md:border-none mr-5'>
