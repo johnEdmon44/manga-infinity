@@ -1,18 +1,18 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { addBookmark, removeBookmark } from '../features/bookmarkSlice';
+import {  addBookmarkAsync, removeBookmarkAsync } from '../features/bookmarkSlice';
 import { PropTypes } from "prop-types";
 
 export const Button = ({ manga }) => {
   const dispatch = useDispatch();
-  const bookmarks = useSelector(state => state.bookmark);
+  const bookmarks = useSelector(state => state.bookmark.items || []);
 
   const isAlreadyadded = bookmarks.some(bookmark => bookmark.mal_id === manga.mal_id);
 
   const handleClick = () => {  
     if(!isAlreadyadded) {
-      dispatch(addBookmark(manga));
+      dispatch(addBookmarkAsync(manga));
     } else {
-      dispatch(removeBookmark(manga));
+      dispatch(removeBookmarkAsync(manga));
     }
   };
 
