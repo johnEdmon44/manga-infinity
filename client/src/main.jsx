@@ -11,7 +11,7 @@ import { Bookmark } from './pages/Bookmark.jsx'
 import { Author } from './pages/Author.jsx'
 import { Signup } from './pages/Signup.jsx'
 import { Login } from './pages/Login.jsx'
-import AuthProvider from './components/Authprovider.jsx'
+import AuthProvider from './components/AuthProvider.jsx'
 
 const router = createBrowserRouter([
   {
